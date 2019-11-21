@@ -12,7 +12,7 @@ class GameState:
     @classmethod
     def from_rom_name(cls, rom_name):
         pid = find_pid(rom_name)
-        memworker = MemWorker(pid)
+        memworker = MemWorker.from_pid(pid)
         rom_address = get_rom_address(memworker)
         return cls(memworker, rom_address, features)
 

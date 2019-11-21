@@ -4,6 +4,8 @@ import logging
 
 libc = ctypes.CDLL(find_library('c'))
 
+VM_PROT_READ = 1
+
 class VM_REGION_BASIC_INFO(ctypes.Structure):
     _fields_ = [
         ('protection', ctypes.c_uint32),
@@ -105,13 +107,6 @@ class MemWorker:
         name = ctypes.c_uint32(0)
 
         while True:
-            print(self.task)
-            print(address)
-            print(size)
-            print(flavor)
-            print(info)
-            print(info_count)
-            print(name)
             status = libc.mach_vm_region(
                 self.task,
                 ctypes.pointer(address),
@@ -128,17 +123,23 @@ class MemWorker:
             if status != 0: 
                 raise Exception(f'mach_vm_region failed with error code: {status}')
 
-            yield address.value, size.value
+            if info.protection & VM_PROT_READ:
+                yield address.value, size.value
+
             address.value += size.value
 
     def mem_search(self, pattern):
-        for offset, n_bytes in self.mem_iter():  # TODO: can I just get all the mem and read at once? Maybe this is slower? It all has to be held in memory if memorpy code concatenates to b
-            buf = ''
-            current_offset = offset
-            n_bytes_read = 0
-            chunk_exc = False
-            buf += self.read_bytes(current_offset, n_bytes)
-            current_offset += n_bytes
+        for offset, n_bytes in self.mem_iter():
+            try:
+                buf = self.read_bytes(offset, n_bytes)
+            except Exception as e:
+                print(e)
+                buf = ''
+
+            index = buf.find(pattern)
+            while index != -1:
+                yield offset + index
+                index = buf.find(pattern, index + 1)
 
     def read_bytes(self, address, n_bytes):
         data = ctypes.c_void_p(0)
@@ -156,6 +157,6 @@ class MemWorker:
             raise Exception(f'mach_vm_read returned: {status}')
         
         buf = ctypes.string_at(data.value, data_count.value)
-        libc.vm_deallocate(self.mytask, data, data_count)
-        return buf
+        libc.vm_deallocate(self.task, data, data_count)
+        return str(buf)
         
