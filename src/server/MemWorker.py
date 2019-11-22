@@ -1,6 +1,8 @@
 from ctypes.util import find_library
 import ctypes
+from functional import seq
 import logging
+import psutil
 
 libc = ctypes.CDLL(find_library('c'))
 
@@ -16,14 +18,14 @@ class VM_REGION_BASIC_INFO(ctypes.Structure):
         ('offset', ctypes.c_ulonglong),
         ('behavior', ctypes.c_uint32),
         ('user_wired_count', ctypes.c_ushort),
-        ]
+    ]
 
 class MemWorker:
     """ Implements a class for interacting with another process' memory.
 
         Methods:
             mem_search(pattern)
-            read_bytes(addr, nbytes, type = int)
+            read_bytes(addr, nbytes)
     """
     def __init__(self, task):
         self.task = task
@@ -65,7 +67,7 @@ class MemWorker:
             libc.mach_task_self(), 
             ctypes.c_int(pid), 
             ctypes.pointer(task),
-            )
+        )
         if status != 0:
             raise Exception(f'task_for_pid failed with error code: {status}.')
 
@@ -86,7 +88,7 @@ class MemWorker:
                 (MemWorker obj): For the most-recently opened process
                 satisfying the name and command line criteria.
         """
-        pids = find_matching_pids(name, cmdline)  # sorted least to most recently created
+        pids = cls.find_matching_pids(name, cmdline)  # sorted least to most recently created
         
         if not pids:
             raise Exception(f'No process exists with "{name}" in name and "{cmdline}" in \
@@ -101,7 +103,7 @@ class MemWorker:
     def mem_iter(self):
         address = ctypes.c_ulong(0)
         size = ctypes.c_ulong(0)
-        flavor = 9  # TODO: Why?
+        flavor = 9
         info = VM_REGION_BASIC_INFO()
         info_count = ctypes.c_uint32(ctypes.sizeof(info) // 4)
         name = ctypes.c_uint32(0)
@@ -115,10 +117,10 @@ class MemWorker:
                 ctypes.pointer(info),
                 ctypes.pointer(info_count),
                 ctypes.pointer(name),
-                )
+            )
 
             if status == 1:
-                break  # Crossed into kernel land?
+                break
 
             if status != 0: 
                 raise Exception(f'mach_vm_region failed with error code: {status}')
@@ -133,8 +135,8 @@ class MemWorker:
             try:
                 buf = self.read_bytes(offset, n_bytes)
             except Exception as e:
-                print(e)
-                buf = ''
+                logging.warning(e)
+                continue
 
             index = buf.find(pattern)
             while index != -1:
@@ -151,12 +153,14 @@ class MemWorker:
             ctypes.c_longlong(n_bytes), 
             ctypes.pointer(data), 
             ctypes.pointer(data_count),
-            )
+        )
+
+
 
         if status != 0:
             raise Exception(f'mach_vm_read returned: {status}')
         
         buf = ctypes.string_at(data.value, data_count.value)
         libc.vm_deallocate(self.task, data, data_count)
-        return str(buf)
+        return buf
         

@@ -1,5 +1,5 @@
+from constants import GOLD_ADDR_ROM, GOLD_ADDR_SHARK
 import struct
-from utils import shark_to_rom_address
 
 MEM_FORMATS = {
     1: '<B',
@@ -13,7 +13,6 @@ class Feature:
     Attributes:
         shark_addr (hex): Address of feature in game memory using GameShark.
         n_bytes (int): Number of bytes the feature occupies in game memory.
-        groups (list): List of strings - groups the feature belongs to.
         lookup (dict): Optional. For numeric values that should be
             interpreted as a character or string. Key is a hex byte.
             Value is a string representing the human meaning.
@@ -24,12 +23,9 @@ class Feature:
     Note: If neither lookup nor mask is specified, the feature is
         interpreted as an integer.
     """
-    def __init__(self, shark_addr, n_bytes, 
-        groups = [], lookup = None, mask = None):
-
+    def __init__(self, shark_addr, n_bytes, lookup = None, mask = None):
         self.shark_addr = shark_addr
         self.n_bytes = n_bytes
-        groups = groups
         self.lookup = lookup
         self.mask = mask
 
@@ -42,10 +38,21 @@ class Feature:
         if value & self.mask:
             return True
         return False
-        
-    def get_value(self, memworker, rom_address):
-        value_address = rom_address + shark_to_rom_address(self.shark_code)
-        raw_mem = memworker.process.read_bytes(value_address, self.n_bytes)
+ 
+    @property
+    def rom_addr(self):
+        feature_addr_shark = self.shark_addr & 0x00FFFFFF
+        feature_type_shark = self.shark_addr & 0xFF000000
+        offset = GOLD_ADDR_SHARK - feature_addr_shark
+        feature_addr_rom = GOLD_ADDR_ROM - offset
+        feature_addr_rom += -2 * ((feature_addr_rom + 2) % 4) + 5
+        if feature_type_shark == 0x81000000:
+            feature_addr_rom -= 1
+        return feature_addr_rom
+       
+    def get_value(self, memworker, rom_addr):
+        value_addr = rom_addr + self.rom_addr
+        raw_mem = memworker.read_bytes(value_addr, self.n_bytes)
         value = self._int_from_raw_mem(raw_mem)
         
         if self.lookup:

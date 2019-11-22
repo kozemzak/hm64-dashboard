@@ -2,20 +2,14 @@ from flask import Flask, jsonify, send_from_directory
 from flask_cors import CORS
 from GameState import GameState
 from os import path
-from utils import handle_args
 
 app = Flask(__name__)
 CORS(app)
-args = handle_args()
-game_state = GameState.from_rom_name(args.rom_name)
+game_state = GameState.from_rom_constants()
 
 @app.route('/')
 def index():
-    return jsonify(game_state.get_group_features('all'))
-
-@app.route('/<group>')
-def category(group):
-    return jsonify(game_state.get_group_features(group))
+    return jsonify(game_state.get_features())
 
 @app.route('/favicon.ico')
 def favicon():
