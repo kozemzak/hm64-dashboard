@@ -63,29 +63,29 @@ LOOKUP_NAME_CHAR = {
     0xDC: '8',
     0xDD: '9',
     0xDE: '0',
-    0xDF: '?',
-    0xE0: '!',
-    0xE1: TODO, # hyphen
-    0xE2: '~',
-    0xE3: TODO, # middle dot
-    0xE4: ',', # lower left hash
-    0xE5: '.', # left lower open ring
-    0xE6: '/',
-    0xE7: TODO, # empty star
-    0xE8: TODO, # filled star
-    0xE9: '&',
-    0xEA: TODO, # empty heart
-    0xEB: TODO, # filled heart
-    0xEC: TODO, # fish hook
-    0xED: TODO, # paw print
+    0xDF: 'U+2753', # question mark
+    0xE0: 'U+2757', # exclamation point
+    0xE1: 'U+2312', # arc-ed hyphen
+    0xE2: 'U+2053', # tilde
+    0xE3: 'U+25CF', # middle dot
+    0xE4: 'U+3001', # lower left comma
+    0xE5: 'U+3002', # left lower open period
+    0xE6: 'U+2044', # fraction slash
+    0xE7: 'U+2606', # empty star
+    0xE8: 'U+2605', # filled star
+    0xE9: 'U+FF06', # ampersand
+    0xEA: 'U+2661', # empty heart
+    0xEB: 'U+2665', # filled heart
+    0xEC: 'U+10D0', # fish hook
+    0xED: 'U+1F43E', # paw print
     0xEE: ' ',
     0xEF: TODO, # x with 4 dots?
     0xF0: TODO, # empty circle
     0xF1: TODO, # degrees celcius
     0xF6: '-',
     0xF7: TODO, # multiplication
-    0xF8: ':',
-    0xF9: ';',
+    0xF8: TODO,
+    0xF9: TODO,
     0xFA: TODO, # three horizontal middle dots
     0xFB: TODO, # two horizontal middle dots
     0xFC: TODO, # left quotations
