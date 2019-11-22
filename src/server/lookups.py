@@ -1,15 +1,27 @@
 TODO = 'missing'
 
+LOOKUP_ANIMAL_CONDITION = {
+    0x00: 'Normal',
+    0x01: 'Happy',
+    0x02: 'Mad',
+    0x03: 'Sick',
+    0x04: 'Dead',
+}
+
+LOOKUP_ANIMAL_TYPE = {
+    0x00: None,
+    0x01: 'Calf',
+    0x02: 'Cow',
+    0x03: None,
+    0x04: 'Lamb',
+    0x05: 'Sheep',
+    0x06: 'Sheared Sheep',
+}
+
 LOOKUP_CHICKEN_CONDITION = {
     0x00: 'Normal',
     0x01: 'Starved',
     0x02: 'Dead',
-}
-
-LOOKUP_CHICKEN_LOCATION = {
-    0x00: None,
-    0x52: 'Outside',
-    0x59: 'Chicken Coop',
 }
 
 LOOKUP_CHICKEN_TYPE = {
@@ -18,7 +30,15 @@ LOOKUP_CHICKEN_TYPE = {
     0x02: 'Adult',
 }
 
+LOOKUP_LOCATION = {
+    0x00: None,
+    0x52: 'Outside',
+    0x58: 'Barn',
+    0x59: 'Chicken Coop',
+}
+
 LOOKUP_NAME_CHAR = {
+    0x00: '',
     0xA1: 'A',
     0xA2: 'B',
     0xA3: 'C',
@@ -112,6 +132,7 @@ LOOKUP_NAME_CHAR = {
 }
 
 LOOKUP_SEASON = {
+    0x00: None,
     0x01: 'Spring',
     0x02: 'Summer',
     0x03: 'Fall',

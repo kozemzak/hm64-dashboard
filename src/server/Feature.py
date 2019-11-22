@@ -64,7 +64,7 @@ class Feature:
                 print(self.lookup)
                 return None
 
-        elif self.mask:
+        elif self.mask is not None:
             return self._bool_from_mask(value)
 
         return value

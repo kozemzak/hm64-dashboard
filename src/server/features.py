@@ -3,6 +3,886 @@ from Feature import Feature
 
 features = {
 
+    'animal_1_affection': Feature(
+        shark_addr = 0x80170280,
+        n_bytes = 1,
+    ),
+
+    'animal_1_age': Feature(
+        shark_addr = 0x801702A1,
+        n_bytes = 1,
+    ),
+
+    'animal_1_birth_day_number': Feature(
+        shark_addr = 0x801702AA,
+        n_bytes = 1,
+    ),
+
+    'animal_1_birth_season': Feature(
+        shark_addr = 0x801702A9,
+        n_bytes = 1,
+        lookup = LOOKUP_SEASON,
+    ),
+
+    'animal_1_brushed': Feature(
+        shark_addr = 0x801702AD,
+        n_bytes = 1,
+        mask = 0x20,
+    ),
+
+    'animal_1_condition': Feature(
+        shark_addr = 0x801702A0,
+        n_bytes = 1,
+        lookup = LOOKUP_ANIMAL_CONDITION,
+    ),
+
+    'animal_1_condition_counter': Feature(
+        shark_addr = 0x801702A2,
+        n_bytes = 1,
+    ),
+
+    'animal_1_fed': Feature(
+        shark_addr = 0x801702AD,
+        n_bytes = 1,
+        mask = 0x08,
+    ),
+
+    'animal_1_gold_milk': Feature(
+        shark_addr = 0x801702AB,
+        n_bytes = 1,
+        mask = 0x00,
+    ),
+
+    'animal_1_location': Feature(
+        shark_addr = 0x8017029A,
+        n_bytes = 1,
+        lookup = LOOKUP_LOCATION,
+    ),
+
+    'animal_1_milked': Feature(
+        shark_addr = 0x801702AD,
+        n_bytes = 1,
+        mask = 0x40,
+    ),
+
+    'animal_1_name_char_1': Feature(
+        shark_addr = 0x80170281,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_1_name_char_2': Feature(
+        shark_addr = 0x80170282,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_1_name_char_3': Feature(
+        shark_addr = 0x80170283,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_1_name_char_4': Feature(
+        shark_addr = 0x80170284,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_1_name_char_5': Feature(
+        shark_addr = 0x80170285,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_1_name_char_6': Feature(
+        shark_addr = 0x80170286,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_1_talked_to': Feature(
+        shark_addr = 0x801702AC,
+        n_bytes = 1,
+        mask = 0x10,
+    ),
+
+    'animal_1_type': Feature(
+        shark_addr = 0x8017029F,
+        n_bytes = 1,
+        lookup = LOOKUP_ANIMAL_TYPE,
+    ),
+
+    'animal_2_affection': Feature(
+        shark_addr = 0x801702B0,
+        n_bytes = 1,
+    ),
+
+    'animal_2_age': Feature(
+        shark_addr = 0x801702D1,
+        n_bytes = 1,
+    ),
+
+    'animal_2_birth_day_number': Feature(
+        shark_addr = 0x801702DA,
+        n_bytes = 1,
+    ),
+
+    'animal_2_birth_season': Feature(
+        shark_addr = 0x801702D9,
+        n_bytes = 1,
+        lookup = LOOKUP_SEASON,
+    ),
+
+    'animal_2_brushed': Feature(
+        shark_addr = 0x801702DD,
+        n_bytes = 1,
+        mask = 0x20,
+    ),
+
+    'animal_2_condition': Feature(
+        shark_addr = 0x801702D0,
+        n_bytes = 1,
+        lookup = LOOKUP_ANIMAL_CONDITION,
+    ),
+
+    'animal_2_condition_counter': Feature(
+        shark_addr = 0x801702D2,
+        n_bytes = 1,
+    ),
+
+    'animal_2_fed': Feature(
+        shark_addr = 0x801702DD,
+        n_bytes = 1,
+        mask = 0x08,
+    ),
+
+    'animal_2_gold_milk': Feature(
+        shark_addr = 0x801702DB,
+        n_bytes = 1,
+        mask = 0x00,
+    ),
+
+    'animal_2_location': Feature(
+        shark_addr = 0x801702CA,
+        n_bytes = 1,
+        lookup = LOOKUP_LOCATION,
+    ),
+
+    'animal_2_milked': Feature(
+        shark_addr = 0x801702DD,
+        n_bytes = 1,
+        mask = 0x40,
+    ),
+
+    'animal_2_name_char_1': Feature(
+        shark_addr = 0x801702B1,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_2_name_char_2': Feature(
+        shark_addr = 0x801702B2,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_2_name_char_3': Feature(
+        shark_addr = 0x801702B3,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_2_name_char_4': Feature(
+        shark_addr = 0x801702B4,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_2_name_char_5': Feature(
+        shark_addr = 0x801702B5,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_2_name_char_6': Feature(
+        shark_addr = 0x801702B6,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_2_talked_to': Feature(
+        shark_addr = 0x801702DC,
+        n_bytes = 1,
+        mask = 0x10,
+    ),
+
+    'animal_2_type': Feature(
+        shark_addr = 0x801702CF,
+        n_bytes = 1,
+        lookup = LOOKUP_ANIMAL_TYPE,
+    ),
+
+    'animal_3_affection': Feature(
+        shark_addr = 0x801702E0,
+        n_bytes = 1,
+    ),
+
+    'animal_3_age': Feature(
+        shark_addr = 0x80170301,
+        n_bytes = 1,
+    ),
+
+    'animal_3_birth_day_number': Feature(
+        shark_addr = 0x8017030A,
+        n_bytes = 1,
+    ),
+
+    'animal_3_birth_season': Feature(
+        shark_addr = 0x80170309,
+        n_bytes = 1,
+        lookup = LOOKUP_SEASON,
+    ),
+
+    'animal_3_brushed': Feature(
+        shark_addr = 0x8017030D,
+        n_bytes = 1,
+        mask = 0x20,
+    ),
+
+    'animal_3_condition': Feature(
+        shark_addr = 0x80170300,
+        n_bytes = 1,
+        lookup = LOOKUP_ANIMAL_CONDITION,
+    ),
+
+    'animal_3_condition_counter': Feature(
+        shark_addr = 0x80170302,
+        n_bytes = 1,
+    ),
+
+    'animal_3_fed': Feature(
+        shark_addr = 0x8017030D,
+        n_bytes = 1,
+        mask = 0x08,
+    ),
+
+    'animal_3_gold_milk': Feature(
+        shark_addr = 0x8017030B,
+        n_bytes = 1,
+        mask = 0x00,
+    ),
+
+    'animal_3_location': Feature(
+        shark_addr = 0x801702FA,
+        n_bytes = 1,
+        lookup = LOOKUP_LOCATION,
+    ),
+
+    'animal_3_milked': Feature(
+        shark_addr = 0x8017030D,
+        n_bytes = 1,
+        mask = 0x40,
+    ),
+
+    'animal_3_name_char_1': Feature(
+        shark_addr = 0x801702E1,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_3_name_char_2': Feature(
+        shark_addr = 0x801702E2,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_3_name_char_3': Feature(
+        shark_addr = 0x801702E3,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_3_name_char_4': Feature(
+        shark_addr = 0x801702E4,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_3_name_char_5': Feature(
+        shark_addr = 0x801702E5,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_3_name_char_6': Feature(
+        shark_addr = 0x801702E6,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_3_talked_to': Feature(
+        shark_addr = 0x8017030C,
+        n_bytes = 1,
+        mask = 0x10,
+    ),
+
+    'animal_3_type': Feature(
+        shark_addr = 0x801702FF,
+        n_bytes = 1,
+        lookup = LOOKUP_ANIMAL_TYPE,
+    ),
+
+    'animal_4_affection': Feature(
+        shark_addr = 0x80170310,
+        n_bytes = 1,
+    ),
+
+    'animal_4_age': Feature(
+        shark_addr = 0x80170331,
+        n_bytes = 1,
+    ),
+
+    'animal_4_birth_day_number': Feature(
+        shark_addr = 0x8017033A,
+        n_bytes = 1,
+    ),
+
+    'animal_4_birth_season': Feature(
+        shark_addr = 0x80170339,
+        n_bytes = 1,
+        lookup = LOOKUP_SEASON,
+    ),
+
+    'animal_4_brushed': Feature(
+        shark_addr = 0x8017033D,
+        n_bytes = 1,
+        mask = 0x20,
+    ),
+
+    'animal_4_condition': Feature(
+        shark_addr = 0x80170330,
+        n_bytes = 1,
+        lookup = LOOKUP_ANIMAL_CONDITION,
+    ),
+
+    'animal_4_condition_counter': Feature(
+        shark_addr = 0x80170332,
+        n_bytes = 1,
+    ),
+
+    'animal_4_fed': Feature(
+        shark_addr = 0x8017033D,
+        n_bytes = 1,
+        mask = 0x08,
+    ),
+
+    'animal_4_gold_milk': Feature(
+        shark_addr = 0x8017033B,
+        n_bytes = 1,
+        mask = 0x00,
+    ),
+
+    'animal_4_location': Feature(
+        shark_addr = 0x8017032A,
+        n_bytes = 1,
+        lookup = LOOKUP_LOCATION,
+    ),
+
+    'animal_4_milked': Feature(
+        shark_addr = 0x8017033D,
+        n_bytes = 1,
+        mask = 0x40,
+    ),
+
+    'animal_4_name_char_1': Feature(
+        shark_addr = 0x80170311,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_4_name_char_2': Feature(
+        shark_addr = 0x80170312,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_4_name_char_3': Feature(
+        shark_addr = 0x80170313,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_4_name_char_4': Feature(
+        shark_addr = 0x80170314,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_4_name_char_5': Feature(
+        shark_addr = 0x80170315,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_4_name_char_6': Feature(
+        shark_addr = 0x80170316,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_4_talked_to': Feature(
+        shark_addr = 0x8017033C,
+        n_bytes = 1,
+        mask = 0x10,
+    ),
+
+    'animal_4_type': Feature(
+        shark_addr = 0x8017032F,
+        n_bytes = 1,
+        lookup = LOOKUP_ANIMAL_TYPE,
+    ),
+
+    'animal_5_affection': Feature(
+        shark_addr = 0x80170340,
+        n_bytes = 1,
+    ),
+
+    'animal_5_age': Feature(
+        shark_addr = 0x80170361,
+        n_bytes = 1,
+    ),
+
+    'animal_5_birth_day_number': Feature(
+        shark_addr = 0x8017036A,
+        n_bytes = 1,
+    ),
+
+    'animal_5_birth_season': Feature(
+        shark_addr = 0x80170369,
+        n_bytes = 1,
+        lookup = LOOKUP_SEASON,
+    ),
+
+    'animal_5_brushed': Feature(
+        shark_addr = 0x8017036D,
+        n_bytes = 1,
+        mask = 0x20,
+    ),
+
+    'animal_5_condition': Feature(
+        shark_addr = 0x80170360,
+        n_bytes = 1,
+        lookup = LOOKUP_ANIMAL_CONDITION,
+    ),
+
+    'animal_5_condition_counter': Feature(
+        shark_addr = 0x80170362,
+        n_bytes = 1,
+    ),
+
+    'animal_5_fed': Feature(
+        shark_addr = 0x8017036D,
+        n_bytes = 1,
+        mask = 0x08,
+    ),
+
+    'animal_5_gold_milk': Feature(
+        shark_addr = 0x8017036B,
+        n_bytes = 1,
+        mask = 0x00,
+    ),
+
+    'animal_5_location': Feature(
+        shark_addr = 0x8017035A,
+        n_bytes = 1,
+        lookup = LOOKUP_LOCATION,
+    ),
+
+    'animal_5_milked': Feature(
+        shark_addr = 0x8017036D,
+        n_bytes = 1,
+        mask = 0x40,
+    ),
+
+    'animal_5_name_char_1': Feature(
+        shark_addr = 0x80170341,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_5_name_char_2': Feature(
+        shark_addr = 0x80170342,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_5_name_char_3': Feature(
+        shark_addr = 0x80170343,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_5_name_char_4': Feature(
+        shark_addr = 0x80170344,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_5_name_char_5': Feature(
+        shark_addr = 0x80170345,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_5_name_char_6': Feature(
+        shark_addr = 0x80170346,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_5_talked_to': Feature(
+        shark_addr = 0x8017036C,
+        n_bytes = 1,
+        mask = 0x10,
+    ),
+
+    'animal_5_type': Feature(
+        shark_addr = 0x8017035F,
+        n_bytes = 1,
+        lookup = LOOKUP_ANIMAL_TYPE,
+    ),
+
+    'animal_6_affection': Feature(
+        shark_addr = 0x80170370,
+        n_bytes = 1,
+    ),
+
+    'animal_6_age': Feature(
+        shark_addr = 0x80170391,
+        n_bytes = 1,
+    ),
+
+    'animal_6_birth_day_number': Feature(
+        shark_addr = 0x8017039A,
+        n_bytes = 1,
+    ),
+
+    'animal_6_birth_season': Feature(
+        shark_addr = 0x80170399,
+        n_bytes = 1,
+        lookup = LOOKUP_SEASON,
+    ),
+
+    'animal_6_brushed': Feature(
+        shark_addr = 0x8017039D,
+        n_bytes = 1,
+        mask = 0x20,
+    ),
+
+    'animal_6_condition': Feature(
+        shark_addr = 0x80170390,
+        n_bytes = 1,
+        lookup = LOOKUP_ANIMAL_CONDITION,
+    ),
+
+    'animal_6_condition_counter': Feature(
+        shark_addr = 0x80170392,
+        n_bytes = 1,
+    ),
+
+    'animal_6_fed': Feature(
+        shark_addr = 0x8017039D,
+        n_bytes = 1,
+        mask = 0x08,
+    ),
+
+    'animal_6_gold_milk': Feature(
+        shark_addr = 0x8017039B,
+        n_bytes = 1,
+        mask = 0x00,
+    ),
+
+    'animal_6_location': Feature(
+        shark_addr = 0x8017038A,
+        n_bytes = 1,
+        lookup = LOOKUP_LOCATION,
+    ),
+
+    'animal_6_milked': Feature(
+        shark_addr = 0x8017039D,
+        n_bytes = 1,
+        mask = 0x40,
+    ),
+
+    'animal_6_name_char_1': Feature(
+        shark_addr = 0x80170371,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_6_name_char_2': Feature(
+        shark_addr = 0x80170372,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_6_name_char_3': Feature(
+        shark_addr = 0x80170373,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_6_name_char_4': Feature(
+        shark_addr = 0x80170374,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_6_name_char_5': Feature(
+        shark_addr = 0x80170375,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_6_name_char_6': Feature(
+        shark_addr = 0x80170376,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_6_talked_to': Feature(
+        shark_addr = 0x8017039C,
+        n_bytes = 1,
+        mask = 0x10,
+    ),
+
+    'animal_6_type': Feature(
+        shark_addr = 0x8017038F,
+        n_bytes = 1,
+        lookup = LOOKUP_ANIMAL_TYPE,
+    ),
+
+    'animal_7_affection': Feature(
+        shark_addr = 0x801703A0,
+        n_bytes = 1,
+    ),
+
+    'animal_7_age': Feature(
+        shark_addr = 0x801703C1,
+        n_bytes = 1,
+    ),
+
+    'animal_7_birth_day_number': Feature(
+        shark_addr = 0x801703CA,
+        n_bytes = 1,
+    ),
+
+    'animal_7_birth_season': Feature(
+        shark_addr = 0x801703C9,
+        n_bytes = 1,
+        lookup = LOOKUP_SEASON,
+    ),
+
+    'animal_7_brushed': Feature(
+        shark_addr = 0x801703CD,
+        n_bytes = 1,
+        mask = 0x20,
+    ),
+
+    'animal_7_condition': Feature(
+        shark_addr = 0x801703C0,
+        n_bytes = 1,
+        lookup = LOOKUP_ANIMAL_CONDITION,
+    ),
+
+    'animal_7_condition_counter': Feature(
+        shark_addr = 0x801703C2,
+        n_bytes = 1,
+    ),
+
+    'animal_7_fed': Feature(
+        shark_addr = 0x801703CD,
+        n_bytes = 1,
+        mask = 0x08,
+    ),
+
+    'animal_7_gold_milk': Feature(
+        shark_addr = 0x801703CB,
+        n_bytes = 1,
+        mask = 0x00,
+    ),
+
+    'animal_7_location': Feature(
+        shark_addr = 0x801703BA,
+        n_bytes = 1,
+        lookup = LOOKUP_LOCATION,
+    ),
+
+    'animal_7_milked': Feature(
+        shark_addr = 0x801703CD,
+        n_bytes = 1,
+        mask = 0x40,
+    ),
+
+    'animal_7_name_char_1': Feature(
+        shark_addr = 0x801703A1,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_7_name_char_2': Feature(
+        shark_addr = 0x801703A2,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_7_name_char_3': Feature(
+        shark_addr = 0x801703A3,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_7_name_char_4': Feature(
+        shark_addr = 0x801703A4,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_7_name_char_5': Feature(
+        shark_addr = 0x801703A5,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_7_name_char_6': Feature(
+        shark_addr = 0x801703A6,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_7_talked_to': Feature(
+        shark_addr = 0x801703CC,
+        n_bytes = 1,
+        mask = 0x10,
+    ),
+
+    'animal_7_type': Feature(
+        shark_addr = 0x801703BF,
+        n_bytes = 1,
+        lookup = LOOKUP_ANIMAL_TYPE,
+    ),
+
+    'animal_8_affection': Feature(
+        shark_addr = 0x801703D0,
+        n_bytes = 1,
+    ),
+
+    'animal_8_age': Feature(
+        shark_addr = 0x801703F1,
+        n_bytes = 1,
+    ),
+
+    'animal_8_birth_day_number': Feature(
+        shark_addr = 0x801703FA,
+        n_bytes = 1,
+    ),
+
+    'animal_8_birth_season': Feature(
+        shark_addr = 0x801703F9,
+        n_bytes = 1,
+        lookup = LOOKUP_SEASON,
+    ),
+
+    'animal_8_brushed': Feature(
+        shark_addr = 0x801703FD,
+        n_bytes = 1,
+        mask = 0x20,
+    ),
+
+    'animal_8_condition': Feature(
+        shark_addr = 0x801703F0,
+        n_bytes = 1,
+        lookup = LOOKUP_ANIMAL_CONDITION,
+    ),
+
+    'animal_8_condition_counter': Feature(
+        shark_addr = 0x801703F2,
+        n_bytes = 1,
+    ),
+
+    'animal_8_fed': Feature(
+        shark_addr = 0x801703FD,
+        n_bytes = 1,
+        mask = 0x08,
+    ),
+
+    'animal_8_gold_milk': Feature(
+        shark_addr = 0x801703FB,
+        n_bytes = 1,
+        mask = 0x00,
+    ),
+
+    'animal_8_location': Feature(
+        shark_addr = 0x801703EA,
+        n_bytes = 1,
+        lookup = LOOKUP_LOCATION,
+    ),
+
+    'animal_8_milked': Feature(
+        shark_addr = 0x801703FD,
+        n_bytes = 1,
+        mask = 0x40,
+    ),
+
+    'animal_8_name_char_1': Feature(
+        shark_addr = 0x801703D1,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_8_name_char_2': Feature(
+        shark_addr = 0x801703D2,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_8_name_char_3': Feature(
+        shark_addr = 0x801703D3,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_8_name_char_4': Feature(
+        shark_addr = 0x801703D4,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_8_name_char_5': Feature(
+        shark_addr = 0x801703D5,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_8_name_char_6': Feature(
+        shark_addr = 0x801703D6,
+        n_bytes = 1,
+        lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'animal_8_talked_to': Feature(
+        shark_addr = 0x801703FC,
+        n_bytes = 1,
+        mask = 0x10,
+    ),
+
+    'animal_8_type': Feature(
+        shark_addr = 0x801703EF,
+        n_bytes = 1,
+        lookup = LOOKUP_ANIMAL_TYPE,
+    ),
+
     'ann_affection': Feature(
         shark_addr = 0x801C3F93,
         n_bytes = 1,
@@ -142,7 +1022,7 @@ features = {
     'chicken_1_location': Feature(
         shark_addr = 0x801C3C06,
         n_bytes = 1,
-        lookup = LOOKUP_CHICKEN_LOCATION,
+        lookup = LOOKUP_LOCATION,
     ),
 
     'chicken_1_name_char_1': Feature(
@@ -213,7 +1093,7 @@ features = {
     'chicken_2_location': Feature(
         shark_addr = 0x801C3C2A,
         n_bytes = 1,
-        lookup = LOOKUP_CHICKEN_LOCATION,
+        lookup = LOOKUP_LOCATION,
     ),
 
     'chicken_2_name_char_1': Feature(
@@ -284,7 +1164,7 @@ features = {
     'chicken_3_location': Feature(
         shark_addr = 0x801C3C4E,
         n_bytes = 1,
-        lookup = LOOKUP_CHICKEN_LOCATION,
+        lookup = LOOKUP_LOCATION,
     ),
 
     'chicken_3_name_char_1': Feature(
@@ -355,7 +1235,7 @@ features = {
     'chicken_4_location': Feature(
         shark_addr = 0x801C3C72,
         n_bytes = 1,
-        lookup = LOOKUP_CHICKEN_LOCATION,
+        lookup = LOOKUP_LOCATION,
     ),
 
     'chicken_4_name_char_1': Feature(
@@ -426,7 +1306,7 @@ features = {
     'chicken_5_location': Feature(
         shark_addr = 0x801C3C96,
         n_bytes = 1,
-        lookup = LOOKUP_CHICKEN_LOCATION,
+        lookup = LOOKUP_LOCATION,
     ),
 
     'chicken_5_name_char_1': Feature(
@@ -497,7 +1377,7 @@ features = {
     'chicken_6_location': Feature(
         shark_addr = 0x801C3CBA,
         n_bytes = 1,
-        lookup = LOOKUP_CHICKEN_LOCATION,
+        lookup = LOOKUP_LOCATION,
     ),
 
     'chicken_6_name_char_1': Feature(
