@@ -57,7 +57,12 @@ class Feature:
         value = self._int_from_raw_mem(raw_mem)
         
         if self.lookup:
-            return self.lookup[value]
+            try:
+                return self.lookup[value]
+            except Exception as e:
+                print(e)
+                print(self.lookup)
+                return None
 
         elif self.mask:
             return self._bool_from_mask(value)

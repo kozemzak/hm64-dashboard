@@ -1,5 +1,23 @@
 TODO = 'missing'
 
+LOOKUP_CHICKEN_CONDITION = {
+    0x00: 'Normal',
+    0x01: 'Starved',
+    0x02: 'Dead',
+}
+
+LOOKUP_CHICKEN_LOCATION = {
+    0x00: None,
+    0x52: 'Outside',
+    0x59: 'Chicken Coop',
+}
+
+LOOKUP_CHICKEN_TYPE = {
+    0x00: None,
+    0x01: 'Chick',
+    0x02: 'Adult',
+}
+
 LOOKUP_NAME_CHAR = {
     0xA1: 'A',
     0xA2: 'B',
