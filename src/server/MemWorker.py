@@ -1,6 +1,8 @@
+from constants import ROM_ANCHOR
 from ctypes.util import find_library
 import ctypes
 from functional import seq
+import functools
 import logging
 import psutil
 
@@ -29,6 +31,14 @@ class MemWorker:
     """
     def __init__(self, task):
         self.task = task
+
+    @property
+    @functools.lru_cache()
+    def rom_addr(self):
+        results = list(self.mem_search(ROM_ANCHOR))
+        assert len(results) == 1, \
+            'There was an error retrieving the memory location of the ROM'
+        return results[0]
 
     @staticmethod
     def find_matching_pids(name, cmdline):

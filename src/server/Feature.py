@@ -40,19 +40,20 @@ class Feature:
         return False
  
     @property
-    def rom_addr(self):
+    def rom_offset(self):
         feature_addr_shark = self.shark_addr & 0x00FFFFFF
         feature_type_shark = self.shark_addr & 0xFF000000
-        offset = GOLD_ADDR_SHARK - feature_addr_shark
-        feature_addr_rom = GOLD_ADDR_ROM - offset
-        feature_addr_rom += -2 * ((feature_addr_rom + 2) % 4) + 5
+        diff = GOLD_ADDR_SHARK - feature_addr_shark
+
+        feature_offset_rom = GOLD_ADDR_ROM - diff
+        feature_offset_rom += -2 * ((feature_offset_rom + 2) % 4) + 5
         if feature_type_shark == 0x81000000:
-            feature_addr_rom -= 1
-        return feature_addr_rom
+            feature_offset_rom -= 1
+        return feature_offset_rom
        
-    def get_value(self, memworker, rom_addr):
-        value_addr = rom_addr + self.rom_addr
-        raw_mem = memworker.read_bytes(value_addr, self.n_bytes)
+    def get_value(self, memworker):
+        feature_addr = memworker.rom_addr + self.rom_offset
+        raw_mem = memworker.read_bytes(feature_addr, self.n_bytes)
         value = self._int_from_raw_mem(raw_mem)
         
         if self.lookup:
