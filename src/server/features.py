@@ -1694,6 +1694,11 @@ features = {
         n_bytes = 1,
     ),
 
+    'horse_age': Feature(
+        shark_addr = 0x8016FDED,
+        n_bytes = 1,
+    ),
+
     'horse_name_char_1': Feature(
         shark_addr = 0x8016FDD1,
         n_bytes = 1,
@@ -1900,31 +1905,24 @@ features = {
         mask = 0x04,
     ),
 
+    'num_chicken_feed': Feature(
+        shark_addr = 0x81237410,
+        n_bytes = 2,
+    ),
+
     'num_fish_caught': Feature(
         shark_addr = 0x8118983A,
+        n_bytes = 2,
+    ),
+
+    'num_fodder': Feature(
+        shark_addr = 0x81180714,
         n_bytes = 2,
     ),
 
     'num_lumber': Feature(
         shark_addr = 0x81189E50,
         n_bytes = 2,
-    ),
-
-    'old_woman_affection': Feature(
-        shark_addr = 0x801C3FB4,
-        n_bytes = 1,
-    ),
-
-    'old_woman_conversation': Feature(
-        shark_addr = 0x8016F8CC,
-        n_bytes = 1,
-        mask = 0x08,
-    ),
-
-    'old_woman_gift': Feature(
-        shark_addr = 0x8016F8D7,
-        n_bytes = 1,
-        mask = 0x01,
     ),
 
     'old_man_affection': Feature(
@@ -1942,6 +1940,23 @@ features = {
         shark_addr = 0x8016F8D7,
         n_bytes = 1,
         mask = 0x02,
+    ),
+
+    'old_woman_affection': Feature(
+        shark_addr = 0x801C3FB4,
+        n_bytes = 1,
+    ),
+
+    'old_woman_conversation': Feature(
+        shark_addr = 0x8016F8CC,
+        n_bytes = 1,
+        mask = 0x08,
+    ),
+
+    'old_woman_gift': Feature(
+        shark_addr = 0x8016F8D7,
+        n_bytes = 1,
+        mask = 0x01,
     ),
 
     'pastor_affection': Feature(
@@ -2010,6 +2025,11 @@ features = {
         shark_addr = 0x80189066,
         n_bytes = 1,
         lookup = LOOKUP_NAME_CHAR,
+    ),
+
+    'player_sick_days': Feature(
+        shark_addr = 0x8016F8F5,
+        n_bytes = 1
     ),
 
     'player_stamina': Feature(
