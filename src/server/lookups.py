@@ -18,7 +18,7 @@ LOOKUP_ANIMAL_TYPE = {
     0x06: 'Sheared Sheep',
 }
 
-LOOKUP_BELONGING_SLOTS = {
+LOOKUP_BELONGING_SLOT = {
         0x00: 'Empty',
         0x01: 'Weed',
         0x02: 'Small Rock',
@@ -91,7 +91,7 @@ LOOKUP_CHICKEN_TYPE = {
     0x02: 'Adult',
 }
 
-LOOKUP_ITEM_SLOTS = {
+LOOKUP_ITEM_SLOT = {
     0x00: 'Empty',
     0x01: 'Ocarina',
     0x02: 'Flower Shop Card',
@@ -231,7 +231,7 @@ LOOKUP_TOOL_LEVEL = {
     0x02: 'Gold',
 }
 
-LOOKUP_TOOL_SLOTS = {
+LOOKUP_TOOL_SLOT = {
     0x00: 'Empty',
     0x01: 'Sickle',
     0x02: 'Hoe',

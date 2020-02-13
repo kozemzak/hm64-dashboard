@@ -970,6 +970,60 @@ features = {
         n_bytes = 1,
     ),
 
+    'belonging_slot_1': Feature(
+        shark_addr = 0x80189084,
+        n_bytes = 1,
+        lookup = LOOKUP_BELONGING_SLOT,
+    ),
+
+    'belonging_slot_2': Feature(
+        shark_addr = 0x80189085,
+        n_bytes = 1,
+        lookup = LOOKUP_BELONGING_SLOT,
+    ),
+
+    'belonging_slot_3': Feature(
+        shark_addr = 0x80189086,
+        n_bytes = 1,
+        lookup = LOOKUP_BELONGING_SLOT,
+    ),
+
+    'belonging_slot_4': Feature(
+        shark_addr = 0x80189087,
+        n_bytes = 1,
+        lookup = LOOKUP_BELONGING_SLOT,
+    ),
+
+    'belonging_slot_5': Feature(
+        shark_addr = 0x80189088,
+        n_bytes = 1,
+        lookup = LOOKUP_BELONGING_SLOT,
+    ),
+
+    'belonging_slot_6': Feature(
+        shark_addr = 0x80189089,
+        n_bytes = 1,
+        lookup = LOOKUP_BELONGING_SLOT,
+    ),
+
+    'belonging_slot_7': Feature(
+        shark_addr = 0x8018908A,
+        n_bytes = 1,
+        lookup = LOOKUP_BELONGING_SLOT,
+    ),
+
+    'belonging_slot_8': Feature(
+        shark_addr = 0x8018908B,
+        n_bytes = 1,
+        lookup = LOOKUP_BELONGING_SLOT,
+    ),
+
+    'bottle_contents': Feature(
+        shark_addr = 0x8018907E,
+        n_bytes = 1,
+        lookup = LOOKUP_BOTTLE_CONTENTS,
+    ),
+
     'carpenter_axe_affection': Feature(
         shark_addr = 0x801C3FAF,
         n_bytes = 1,
@@ -1820,6 +1874,150 @@ features = {
         lookup = LOOKUP_NAME_CHAR,
     ),
 
+    'item_slot_1': Feature(
+        shark_addr = 0x8018908E,
+        n_bytes = 1,
+        lookup = LOOKUP_ITEM_SLOT,
+    ),
+
+    'item_slot_2': Feature(
+        shark_addr = 0x8018908F,
+        n_bytes = 1,
+        lookup = LOOKUP_ITEM_SLOT,
+    ),
+
+    'item_slot_3': Feature(
+        shark_addr = 0x80189090,
+        n_bytes = 1,
+        lookup = LOOKUP_ITEM_SLOT,
+    ),
+
+    'item_slot_4': Feature(
+        shark_addr = 0x80189091,
+        n_bytes = 1,
+        lookup = LOOKUP_ITEM_SLOT,
+    ),
+
+    'item_slot_5': Feature(
+        shark_addr = 0x80189092,
+        n_bytes = 1,
+        lookup = LOOKUP_ITEM_SLOT,
+    ),
+
+    'item_slot_6': Feature(
+        shark_addr = 0x80189093,
+        n_bytes = 1,
+        lookup = LOOKUP_ITEM_SLOT,
+    ),
+
+    'item_slot_7': Feature(
+        shark_addr = 0x80189094,
+        n_bytes = 1,
+        lookup = LOOKUP_ITEM_SLOT,
+    ),
+
+    'item_slot_8': Feature(
+        shark_addr = 0x80189095,
+        n_bytes = 1,
+        lookup = LOOKUP_ITEM_SLOT,
+    ),
+
+    'item_slot_9': Feature(
+        shark_addr = 0x80189096,
+        n_bytes = 1,
+        lookup = LOOKUP_ITEM_SLOT,
+    ),
+
+    'item_slot_10': Feature(
+        shark_addr = 0x80189097,
+        n_bytes = 1,
+        lookup = LOOKUP_ITEM_SLOT,
+    ),
+
+    'item_slot_11': Feature(
+        shark_addr = 0x80189098,
+        n_bytes = 1,
+        lookup = LOOKUP_ITEM_SLOT,
+    ),
+
+    'item_slot_12': Feature(
+        shark_addr = 0x80189099,
+        n_bytes = 1,
+        lookup = LOOKUP_ITEM_SLOT,
+    ),
+
+    'item_slot_13': Feature(
+        shark_addr = 0x8018909A,
+        n_bytes = 1,
+        lookup = LOOKUP_ITEM_SLOT,
+    ),
+
+    'item_slot_14': Feature(
+        shark_addr = 0x8018909B,
+        n_bytes = 1,
+        lookup = LOOKUP_ITEM_SLOT,
+    ),
+
+    'item_slot_15': Feature(
+        shark_addr = 0x8018909C,
+        n_bytes = 1,
+        lookup = LOOKUP_ITEM_SLOT,
+    ),
+
+    'item_slot_16': Feature(
+        shark_addr = 0x8018909D,
+        n_bytes = 1,
+        lookup = LOOKUP_ITEM_SLOT,
+    ),
+
+    'item_slot_17': Feature(
+        shark_addr = 0x8018909E,
+        n_bytes = 1,
+        lookup = LOOKUP_ITEM_SLOT,
+    ),
+
+    'item_slot_18': Feature(
+        shark_addr = 0x8018909F,
+        n_bytes = 1,
+        lookup = LOOKUP_ITEM_SLOT,
+    ),
+
+    'item_slot_19': Feature(
+        shark_addr = 0x801890A0,
+        n_bytes = 1,
+        lookup = LOOKUP_ITEM_SLOT,
+    ),
+
+    'item_slot_20': Feature(
+        shark_addr = 0x801890A1,
+        n_bytes = 1,
+        lookup = LOOKUP_ITEM_SLOT,
+    ),
+
+    'item_slot_21': Feature(
+        shark_addr = 0x801890A2,
+        n_bytes = 1,
+        lookup = LOOKUP_ITEM_SLOT,
+    ),
+
+    'item_slot_22': Feature(
+        shark_addr = 0x801890A3,
+        n_bytes = 1,
+        lookup = LOOKUP_ITEM_SLOT,
+    ),
+
+    'item_slot_23': Feature(
+        shark_addr = 0x801890A4,
+        n_bytes = 1,
+        lookup = LOOKUP_ITEM_SLOT,
+    ),
+
+    'item_slot_24': Feature(
+        shark_addr = 0x801890A5,
+        n_bytes = 1,
+        lookup = LOOKUP_ITEM_SLOT,
+    ),
+
     'jeff_affection': Feature(
         shark_addr = 0x801C3F98,
         n_bytes = 1,
@@ -2430,6 +2628,54 @@ features = {
     'time_year': Feature(
         shark_addr = 0x801F6F30,
         n_bytes = 1,
+    ),
+
+    'tool_slot_1': Feature (
+        shark_addr = 0x80189075,
+        n_bytes = 1,
+        lookup = LOOKUP_TOOL_SLOT,
+    ),
+
+    'tool_slot_2': Feature (
+        shark_addr = 0x80189076,
+        n_bytes = 1,
+        lookup = LOOKUP_TOOL_SLOT,
+    ),
+
+    'tool_slot_3': Feature (
+        shark_addr = 0x80189077,
+        n_bytes = 1,
+        lookup = LOOKUP_TOOL_SLOT,
+    ),
+
+    'tool_slot_4': Feature (
+        shark_addr = 0x80189078,
+        n_bytes = 1,
+        lookup = LOOKUP_TOOL_SLOT,
+    ),
+
+    'tool_slot_5': Feature (
+        shark_addr = 0x80189079,
+        n_bytes = 1,
+        lookup = LOOKUP_TOOL_SLOT,
+    ),
+
+    'tool_slot_6': Feature (
+        shark_addr = 0x8018907A,
+        n_bytes = 1,
+        lookup = LOOKUP_TOOL_SLOT,
+    ),
+
+    'tool_slot_7': Feature (
+        shark_addr = 0x8018907B,
+        n_bytes = 1,
+        lookup = LOOKUP_TOOL_SLOT,
+    ),
+
+    'tool_slot_8': Feature (
+        shark_addr = 0x8018907C,
+        n_bytes = 1,
+        lookup = LOOKUP_TOOL_SLOT,
     ),
 
     'water_level': Feature(
