@@ -53,15 +53,21 @@ class Feature:
        
     def get_value(self, memworker):
         feature_addr = memworker.rom_addr + self.rom_offset
-        raw_mem = memworker.read_bytes(feature_addr, self.n_bytes)
-        value = self._int_from_raw_mem(raw_mem)
+
+        try:
+            raw_mem = memworker.read_bytes(feature_addr, self.n_bytes)
+            value = self._int_from_raw_mem(raw_mem)
+        except Exception as e:
+            print(e)
+            print(f'ERROR READING {self.n_bytes} BYTES FROM {self.shark_addr}')
+            return None
         
         if self.lookup:
             try:
                 return self.lookup[value]
             except Exception as e:
                 print(e)
-                print(self.lookup)
+                print(f'ERROR LOOKING UP {value} FOR FEATURE {self.shark_addr}')
                 return None
 
         elif self.mask is not None:
