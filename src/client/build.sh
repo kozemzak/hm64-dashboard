@@ -2,6 +2,8 @@
 
 set -e
 
+cd $( dirname "${BASH_SOURCE[0]}" )
+
 js="elm.js"
 min="elm.min.js"
 

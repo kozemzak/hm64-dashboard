@@ -1,0 +1,1 @@
+watchman-make -p "src/client/**/*.elm" --run src/client/build.sh
