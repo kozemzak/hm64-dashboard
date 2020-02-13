@@ -900,6 +900,11 @@ features = {
         mask = 0x01,
     ),
 
+    'ann_location': Feature(
+        shark_addr = 0x801FBA6B,
+        n_bytes = 1,
+    ),
+
     'axe_level': Feature(
         shark_addr = 0x80189081,
         n_bytes = 1,
@@ -913,6 +918,11 @@ features = {
 
     'baby_affection': Feature(
         shark_addr = 0x801C3F95,
+        n_bytes = 1,
+    ),
+
+    'baby_location': Feature(
+        shark_addr = 0x801FBABB,
         n_bytes = 1,
     ),
 
@@ -933,6 +943,11 @@ features = {
         mask = 0x02,
     ),
 
+    'bartender_location': Feature(
+        shark_addr = 0x801FBE53,
+        n_bytes = 1,
+    ),
+
     'basil_affection': Feature(
         shark_addr = 0x801C3F9E,
         n_bytes = 1,
@@ -948,6 +963,11 @@ features = {
         shark_addr = 0x8016F8D1,
         n_bytes = 1,
         mask = 0x04,
+    ),
+
+    'basil_location': Feature(
+        shark_addr = 0x801FBC23,
+        n_bytes = 1,
     ),
 
     'carpenter_axe_affection': Feature(
@@ -967,6 +987,11 @@ features = {
         mask = 0x10,
     ),
 
+    'carpenter_axe_location': Feature(
+        shark_addr = 0x801FBECB,
+        n_bytes = 1,
+    ),
+
     'carpenter_master_affection': Feature(
         shark_addr = 0x801C3FB0,
         n_bytes = 1,
@@ -984,6 +1009,11 @@ features = {
         mask = 0x40,
     ),
 
+    'carpenter_master_location': Feature(
+        shark_addr = 0x801FBEF3,
+        n_bytes = 1,
+    ),
+
     'carpenter_saw_affection': Feature(
         shark_addr = 0x801C3FAE,
         n_bytes = 1,
@@ -999,6 +1029,11 @@ features = {
         shark_addr = 0x8016F8D0,
         n_bytes = 1,
         mask = 0x20,
+    ),
+
+    'carpenter_saw_location': Feature(
+        shark_addr = 0x801FBEA3,
+        n_bytes = 1,
     ),
 
     'chicken_1_condition': Feature(
@@ -1444,6 +1479,11 @@ features = {
         mask = 0x20,
     ),
 
+    'cliff_location': Feature(
+        shark_addr = 0x801FBB5B,
+        n_bytes = 1,
+    ),
+
     'dog_affection': Feature(
         shark_addr = 0x801886B0,
         n_bytes = 1,
@@ -1502,6 +1542,11 @@ features = {
         mask = 0x20,
     ),
 
+    'doug_location': Feature(
+        shark_addr = 0x801FBC73,
+        n_bytes = 1,
+    ),
+
     'ellen_affection': Feature(
         shark_addr = 0x801C3F9F,
         n_bytes = 1,
@@ -1519,6 +1564,11 @@ features = {
         mask = 0x08,
     ),
 
+    'ellen_location': Feature(
+        shark_addr = 0x801FBC4B,
+        n_bytes = 1,
+    ),
+
     'elli_affection': Feature(
         shark_addr = 0x801C3F92,
         n_bytes = 1,
@@ -1534,6 +1584,11 @@ features = {
         shark_addr = 0x8016F8D3,
         n_bytes = 1,
         mask = 0x80,
+    ),
+
+    'elli_location': Feature(
+        shark_addr = 0x801FBA43,
+        n_bytes = 1,
     ),
 
     'farm_name_char_1': Feature(
@@ -1589,6 +1644,11 @@ features = {
         mask = 0x04,
     ),
 
+    'fisherman_location': Feature(
+        shark_addr = 0x801FBE7B,
+        n_bytes = 1,
+    ),
+
     'gold': Feature(
         shark_addr = 0x811FD60E,
         n_bytes = 4,
@@ -1616,6 +1676,11 @@ features = {
         mask = 0x40,
     ),
 
+    'gotz_location': Feature(
+        shark_addr = 0x801FBC9B,
+        n_bytes = 1,
+    ),
+
     'gotz_wife_affection': Feature(
         shark_addr = 0x801C3FA2,
         n_bytes = 1,
@@ -1633,6 +1698,16 @@ features = {
         mask = 0x80,
     ),
 
+    'gotz_wife_location': Feature(
+        shark_addr = 0x801FBCC3,
+        n_bytes = 1,
+    ),
+
+    'gourmet_location': Feature(
+        shark_addr = 0x801FC033,
+        n_bytes = 1,
+    ),
+
     'gray_affection': Feature(
         shark_addr = 0x801C3F97,
         n_bytes = 1,
@@ -1648,6 +1723,11 @@ features = {
         shark_addr = 0x8016F8D2,
         n_bytes = 1,
         mask = 0x08,
+    ),
+
+    'gray_location': Feature(
+        shark_addr = 0x801FBB0B,
+        n_bytes = 1,
     ),
 
     'hammer_level': Feature(
@@ -1676,6 +1756,11 @@ features = {
         shark_addr = 0x8016F8D2,
         n_bytes = 1,
         mask = 0x04,
+    ),
+
+    'harris_location': Feature(
+        shark_addr = 0x801FBAE3,
+        n_bytes = 1,
     ),
 
     'hoe_level': Feature(
@@ -1752,6 +1837,11 @@ features = {
         mask = 0x10,
     ),
 
+    'jeff_location': Feature(
+        shark_addr = 0x801FBB33,
+        n_bytes = 1,
+    ),
+
     'kai_affection': Feature(
         shark_addr = 0x801C3F9A,
         n_bytes = 1,
@@ -1767,6 +1857,16 @@ features = {
         shark_addr = 0x8016F8D2,
         n_bytes = 1,
         mask = 0x40,
+    ),
+
+    'kai_location': Feature(
+        shark_addr = 0x801FBB83,
+        n_bytes = 1,
+    ),
+
+    'kappa_location': Feature(
+        shark_addr = 0x80189147,
+        n_bytes = 1,
     ),
 
     'karen_affection': Feature(
@@ -1786,6 +1886,11 @@ features = {
         mask = 0x02,
     ),
 
+    'karen_location': Feature(
+        shark_addr = 0x801FBA93,
+        n_bytes = 1,
+    ),
+
     'kent_affection': Feature(
         shark_addr = 0x801C3FA4,
         n_bytes = 1,
@@ -1801,6 +1906,11 @@ features = {
         shark_addr = 0x8016F8D0,
         n_bytes = 1,
         mask = 0x01,
+    ),
+
+    'kent_location': Feature(
+        shark_addr = 0x801FBD13,
+        n_bytes = 1,
     ),
 
     'lillia_affection': Feature(
@@ -1820,6 +1930,11 @@ features = {
         mask = 0x02,
     ),
 
+    'lillia_location': Feature(
+        shark_addr = 0x801FBBFB,
+        n_bytes = 1,
+    ),
+
     'maria_affection': Feature(
         shark_addr = 0x801C3F90,
         n_bytes = 1,
@@ -1835,6 +1950,11 @@ features = {
         shark_addr = 0x8016F8B3,
         n_bytes = 1,
         mask = 0x04,
+    ),
+
+    'maria_location': Feature(
+        shark_addr = 0x801FB9F3,
+        n_bytes = 1,
     ),
 
     'may_affection': Feature(
@@ -1854,6 +1974,11 @@ features = {
         mask = 0x08,
     ),
 
+    'may_location': Feature(
+        shark_addr = 0x801FBD8B,
+        n_bytes = 1,
+    ),
+
     'mayor_affection': Feature(
         shark_addr = 0x801C3F9B,
         n_bytes = 1,
@@ -1869,6 +1994,11 @@ features = {
         shark_addr = 0x8016F8D2,
         n_bytes = 1,
         mask = 0x80,
+    ),
+
+    'mayor_location': Feature(
+        shark_addr = 0x801FBBAB,
+        n_bytes = 1,
     ),
 
     'mayor_wife_affection': Feature(
@@ -1888,6 +2018,11 @@ features = {
         mask = 0x01,
     ),
 
+    'mayor_wife_location': Feature(
+        shark_addr = 0x801FBBD3,
+        n_bytes = 1,
+    ),
+
     'midwife_affection': Feature(
         shark_addr = 0x801C3FA6,
         n_bytes = 1,
@@ -1903,6 +2038,11 @@ features = {
         shark_addr = 0x8016F8D0,
         n_bytes = 1,
         mask = 0x04,
+    ),
+
+    'midwife_location': Feature(
+        shark_addr = 0x801FBD63,
+        n_bytes = 1,
     ),
 
     'num_chicken_feed': Feature(
@@ -1942,6 +2082,11 @@ features = {
         mask = 0x02,
     ),
 
+    'old_man_location': Feature(
+        shark_addr = 0x801FBF93,
+        n_bytes = 1,
+    ),
+
     'old_woman_affection': Feature(
         shark_addr = 0x801C3FB4,
         n_bytes = 1,
@@ -1959,6 +2104,11 @@ features = {
         mask = 0x01,
     ),
 
+    'old_woman_location': Feature(
+        shark_addr = 0x801FBFBB,
+        n_bytes = 1,
+    ),
+
     'pastor_affection': Feature(
         shark_addr = 0x801C3FA9,
         n_bytes = 1,
@@ -1974,6 +2124,11 @@ features = {
         shark_addr = 0x8016F8D1,
         n_bytes = 1,
         mask = 0x10,
+    ),
+
+    'pastor_location': Feature(
+        shark_addr = 0x801FBDDB,
+        n_bytes = 1,
     ),
 
     'player_alcohol_tolerance': Feature(
@@ -2059,6 +2214,11 @@ features = {
         mask = 0x40,
     ),
 
+    'popuri_location': Feature(
+        shark_addr = 0x801FBA1B,
+        n_bytes = 1,
+    ),
+
     'potion_master_affection': Feature(
         shark_addr = 0x801C3FA3,
         n_bytes = 1,
@@ -2068,6 +2228,11 @@ features = {
         shark_addr = 0x8016F8CD,
         n_bytes = 1,
         mask = 0x04,
+    ),
+
+    'potion_master_location': Feature(
+        shark_addr = 0x801FBCEB,
+        n_bytes = 1,
     ),
 
     'rick_affection': Feature(
@@ -2087,6 +2252,11 @@ features = {
         mask = 0x20,
     ),
 
+    'rick_location': Feature(
+        shark_addr = 0x801FBDB3,
+        n_bytes = 1,
+    ),
+
     'saibara_affection': Feature(
         shark_addr = 0x801C3FAB,
         n_bytes = 1,
@@ -2104,6 +2274,11 @@ features = {
         mask = 0x40,
     ),
 
+    'saibara_location': Feature(
+        shark_addr = 0x801FBE2B,
+        n_bytes = 1,
+    ),
+
     'shipper_affection': Feature(
         shark_addr = 0x801C3FAA,
         n_bytes = 1,
@@ -2119,6 +2294,11 @@ features = {
         shark_addr = 0x8016F8D6,
         n_bytes = 1,
         mask = 0x01,
+    ),
+
+    'shipper_location': Feature(
+        shark_addr = 0x801FBE03,
+        n_bytes = 1,
     ),
 
     'sickle_level': Feature(
@@ -2149,6 +2329,11 @@ features = {
         mask = 0x80,
     ),
 
+    'sprite_1_location': Feature(
+        shark_addr = 0x801FBF1B,
+        n_bytes = 1,
+    ),
+
     'sprite_2_affection': Feature(
         shark_addr = 0x801C3FB2,
         n_bytes = 1,
@@ -2164,6 +2349,11 @@ features = {
         shark_addr = 0x8016F8D0,
         n_bytes = 1,
         mask = 0x80,
+    ),
+
+    'sprite_2_location': Feature(
+        shark_addr = 0x801FBF43,
+        n_bytes = 1,
     ),
 
     'sprite_3_affection': Feature(
@@ -2183,6 +2373,11 @@ features = {
         mask = 0x80,
     ),
 
+    'sprite_3_location': Feature(
+        shark_addr = 0x801FBF6B,
+        n_bytes = 1,
+    ),
+
     'stu_affection': Feature(
         shark_addr = 0x801C3FA5,
         n_bytes = 1,
@@ -2198,6 +2393,11 @@ features = {
         shark_addr = 0x8016F8D0,
         n_bytes = 1,
         mask = 0x02,
+    ),
+
+    'stu_location': Feature(
+        shark_addr = 0x801FBD3B,
+        n_bytes = 1,
     ),
 
     'time_day_number': Feature(
