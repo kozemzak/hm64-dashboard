@@ -4,11 +4,18 @@ This is an in-progress side project I have been working on to display the game s
 
 ## Getting Started
 
-Python 2.7 is required for this project. You can download the dependencies using pip:
+Python 3 is required for this project. You can download the dependencies using pip:
 
+### Server dependencies:
 ```
-pip install -r requirements.txt
-pip install https://github.com/n1nj4sec/memorpy/archive/master.zip
+python3 -m venv ./src/server/venv
+source src/server/venv/bin/activate
+pip install -r src/server/requirements.txt
+```
+
+### Client dependencies:
+```
+brew install elm
 ```
 
 ## Server
@@ -21,16 +28,18 @@ With OpenEmu running and a x64 HM64 ROM named `hm64_rom.z64` loaded, you can vie
 sudo python src/server/server.py --rom 'hm64_rom.z64'
 ```
 
-Open the URL in your browser. The current endpoints are:
-* `/` equivalent to `/home` -- Basic information about time, weather, and your player.
-* `/tools` -- The level and number of times you have used your tools. Tells you how much water you have remaining.
-* `/misc` -- Number of lumber and fish caught.
-* `/animals` -- The affection values and names of your horse and dog.
-* `/items` -- TODO
-* `/girls_rivals` -- TODO
-* `/other_npcs` -- TODO
-
 I plan on adding significantly more features, but will temporarily be transitioning my focus to the frontend.
+
+## Client
+
+The client is an elm application that queries the server for data, and displays it in real time.
+
+To run:
+```
+cd src/client
+./build.sh
+open index.html
+```
 
 ## Acknowledgments
 
