@@ -1,4 +1,5 @@
 from functional import seq
+from location_functions import *
 import re
 
 def get_heart_color(affection):
@@ -35,8 +36,15 @@ def merge_name_chars_to_string(features):
         .to_dict()
     return {**name_string_features, **other_features}
 
+def convert_character_locations(features):
+    locations = {}
+    locations['ann_location'] = get_ann_location(features)
+    locations['elli_location'] = get_elli_location(features)
+    return {**features, **locations}
+
 def process_features(features):
     features = merge_name_chars_to_string(features)
+    features = convert_character_locations(features)
     features = add_heart_color_features(features)
     return features
 
