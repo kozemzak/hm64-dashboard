@@ -56,6 +56,7 @@ class MemWorker:
         """
         return seq(psutil.process_iter()) \
             .map(lambda x: x.as_dict(attrs = ['pid', 'name', 'cmdline', 'create_time'])) \
+            .filter(lambda x: x['name'] is not None) \
             .filter(lambda x: name in x['name']) \
             .filter(lambda x: cmdline in ' '.join(x['cmdline'])) \
             .sorted(lambda x: x['create_time']) \
