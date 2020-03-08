@@ -1,18 +1,13 @@
 module Main exposing (main, update, view)
 
-import Basics
 import Browser
-import Html exposing (Html)
-import Http
+import Commands.GetAllJson exposing (handleAllData)
+import Commands.GetMetadata exposing (getMetadata, handleMetadata)
 import Json.Decode exposing (decodeString, list, string)
-import Time
-import Types.GameState exposing (gameStateDecoder)
+import Subscriptions.DataPoller exposing (handleTick, pollData)
 import Types.Model exposing (Model, initialModel)
 import Types.Msg exposing (Msg(..))
-import Types.Page exposing (Page(..), PageState(..))
 import Views.Layout exposing (mainLayout)
-import Commands.GetAllJson exposing (getAllJson)
-import Commands.GetGirlNames exposing (getGirlNames)
 
 
 main =
@@ -20,18 +15,13 @@ main =
         { init = init
         , update = update
         , view = view
-        , subscriptions = subscriptions
+        , subscriptions = \_ -> pollData
         }
 
 
 init : () -> ( Model, Cmd Msg )
 init _ =
-    ( initialModel, getGirlNames )
-
-
-subscriptions : Model -> Sub Msg
-subscriptions model =
-    Time.every 1000 Tick
+    ( initialModel, getMetadata )
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -40,34 +30,14 @@ update msg model =
         ChangePage newPage ->
             ( { model | currentPage = newPage }, Cmd.none )
 
-        ReceivedAllJson (Ok jsonString) ->
-            let
-                result =
-                    decodeString (gameStateDecoder model.girlNames) jsonString
-            in
-            case result of
-                Ok gameState ->
-                    ( { model | state = Success gameState jsonString }, Cmd.none )
+        ReceivedAllJson result ->
+            handleAllData model result
 
-                Err _ ->
-                    ( { model | state = Failure "Parsing json failed" }, Cmd.none )
-        
-        ReceivedAllJson (Err err) ->
-            ( { model | state = Failure "Http request failed" }, Cmd.none )
-
-        ReceivedGirlNames (Ok jsonString) ->
-            case (decodeString (list string) jsonString) of
-                Ok names ->
-                    ( { model | girlNames = names }, getAllJson)
-                
-                Err _ ->
-                    ( { model | state = Failure "Could not parse girl names" }, Cmd.none)
-
-        ReceivedGirlNames (Err err) ->
-            ( { model | state = Failure "Http request failed" }, Cmd.none )
+        ReceivedMetadata result ->
+            handleMetadata model result
 
         Tick _ ->
-            ( model, getAllJson )
+            ( model, handleTick model.meta )
 
 
 view model =

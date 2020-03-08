@@ -36,6 +36,7 @@ mainLayout model =
                 [ width <| fillPortion 5
                 , height fill
                 , scrollbarY
+                , scrollbarX
                 , Background.color darkColor
                 , Font.color lightColor
                 , padding 20

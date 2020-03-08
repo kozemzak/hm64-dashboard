@@ -17,6 +17,7 @@ affectionsView state =
         , girlTable state
         ]
 
+
 girlTable : GameState -> Element msg
 girlTable state =
     table
@@ -27,47 +28,49 @@ girlTable state =
         ]
         { data = state.girls
         , columns =
-            [ { header = el [Font.center, centerY] <| text "Name"
+            [ { header = el [ Font.center, centerY ] <| text "Name"
               , width = fill
-              , view = \npc -> el [Font.center, centerY, centerY] <| text npc.name
+              , view = \npc -> el [ Font.center, centerY, centerY ] <| text npc.name
               }
-            , { header = el [Font.center, centerY] <| text "Heart Color"
+            , { header = el [ Font.center, centerY ] <| text "Heart Color"
               , width = fill
-              , view = \npc -> el [Font.center, centerY] <| text npc.heartColor
+              , view = \npc -> el [ Font.center, centerY ] <| text npc.heartColor
               }
-            , { header = el [Font.center, centerY] <| text "Affection"
+            , { header = el [ Font.center, centerY ] <| text "Affection"
               , width = fill
-              , view = \npc -> el [Font.center, centerY] <| text <| String.fromInt <| npc.affection
+              , view = \npc -> el [ Font.center, centerY ] <| text <| String.fromInt <| npc.affection
               }
-            , { header = el [Font.center, centerY] <| text "Convo"
+            , { header = el [ Font.center, centerY ] <| text "Convo"
               , width = fill
               , view =
                     \npc ->
-                        el [Font.center, centerY] <| text <|
-                            if npc.hasHadConversation then
-                                "Yes"
+                        el [ Font.center, centerY ] <|
+                            text <|
+                                if npc.hasHadConversation then
+                                    "Yes"
 
-                            else
-                                "No"
+                                else
+                                    "No"
               }
-            , { header = el [Font.center, centerY] <| text "Gift"
+            , { header = el [ Font.center, centerY ] <| text "Gift"
               , width = fill
               , view =
                     \npc ->
-                        el [Font.center, centerY] <| text <|
-                            if npc.hasGivenGift then
-                                "Yes"
+                        el [ Font.center, centerY ] <|
+                            text <|
+                                if npc.hasGivenGift then
+                                    "Yes"
 
-                            else
-                                "No"
+                                else
+                                    "No"
               }
-            , { header = el [Font.center, centerY] <| text "Location"
+            , { header = el [ Font.center, centerY ] <| text "Location"
               , width = fill
-              , view = \npc -> el [Font.center, centerY] <| text npc.location
+              , view = \npc -> el [ Font.center, centerY ] <| text npc.location
               }
-            , { header = el [Font.center, centerY] <| text "Location Byte"
+            , { header = el [ Font.center, centerY ] <| text "Location Byte"
               , width = fill
-              , view = \npc -> el [Font.center, centerY] <| text <| String.fromInt <| npc.locationByte
+              , view = \npc -> el [ Font.center, centerY ] <| text <| String.fromInt <| npc.locationByte
               }
             ]
         }
