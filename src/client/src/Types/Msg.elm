@@ -8,4 +8,5 @@ import Types.Page exposing (Page)
 type Msg
     = ChangePage Page
     | ReceivedAllJson (Result Http.Error String)
+    | ReceivedGirlNames (Result Http.Error String)
     | Tick Time.Posix

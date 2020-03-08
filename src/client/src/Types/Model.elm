@@ -7,9 +7,14 @@ type alias Model =
     { currentPage : Page
     , state : PageState
     , debugString : String
+    , girlNames : List String
     }
 
 
 initialModel : Model
 initialModel =
-    Model Home Loading "{}"
+    { currentPage = Home
+    , state = Loading
+    , debugString = "{}"
+    , girlNames = []
+    }

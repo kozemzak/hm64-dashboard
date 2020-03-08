@@ -5,6 +5,7 @@ import Types.GameState exposing (GameState)
 
 type Page
     = Home
+    | Affections
     | Recipes
     | Photos
     | Debug

@@ -2,15 +2,17 @@ module Main exposing (main, update, view)
 
 import Basics
 import Browser
-import Decoders.GameState exposing (gameStateDecoder)
 import Html exposing (Html)
 import Http
-import Json.Decode exposing (decodeString)
+import Json.Decode exposing (decodeString, list, string)
 import Time
+import Types.GameState exposing (gameStateDecoder)
 import Types.Model exposing (Model, initialModel)
 import Types.Msg exposing (Msg(..))
 import Types.Page exposing (Page(..), PageState(..))
 import Views.Layout exposing (mainLayout)
+import Commands.GetAllJson exposing (getAllJson)
+import Commands.GetGirlNames exposing (getGirlNames)
 
 
 main =
@@ -24,20 +26,12 @@ main =
 
 init : () -> ( Model, Cmd Msg )
 init _ =
-    ( initialModel, sendRequest )
+    ( initialModel, getGirlNames )
 
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
     Time.every 1000 Tick
-
-
-sendRequest : Cmd Msg
-sendRequest =
-    Http.get
-        { url = "http://localhost:3000"
-        , expect = Http.expectString ReceivedAllJson
-        }
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -49,7 +43,7 @@ update msg model =
         ReceivedAllJson (Ok jsonString) ->
             let
                 result =
-                    decodeString gameStateDecoder jsonString
+                    decodeString (gameStateDecoder model.girlNames) jsonString
             in
             case result of
                 Ok gameState ->
@@ -57,12 +51,23 @@ update msg model =
 
                 Err _ ->
                     ( { model | state = Failure "Parsing json failed" }, Cmd.none )
-
+        
         ReceivedAllJson (Err err) ->
             ( { model | state = Failure "Http request failed" }, Cmd.none )
 
+        ReceivedGirlNames (Ok jsonString) ->
+            case (decodeString (list string) jsonString) of
+                Ok names ->
+                    ( { model | girlNames = names }, getAllJson)
+                
+                Err _ ->
+                    ( { model | state = Failure "Could not parse girl names" }, Cmd.none)
+
+        ReceivedGirlNames (Err err) ->
+            ( { model | state = Failure "Http request failed" }, Cmd.none )
+
         Tick _ ->
-            ( model, sendRequest )
+            ( model, getAllJson )
 
 
 view model =
